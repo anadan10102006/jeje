@@ -85,7 +85,7 @@ Archivo de documentación de la actividad.
 
 ## Actividad No. 1 — Variables y Punteros
 
-En este punto se crea una variable entera y se realizan operaciones relacionadas con direccionamiento de memoria utilizando punteros.
+Se crea una variable entera y se realizan operaciones relacionadas con direccionamiento de memoria utilizando punteros.
 
 El programa permite:
 
@@ -100,7 +100,7 @@ Durante la ejecución se utilizan los operadores `&` y `*` para acceder y modifi
 
 ## Actividad No. 2 — Punteros y Referencias
 
-En este punto se trabaja con punteros y referencias para modificar el valor de una variable encapsulada dentro de una clase.
+Se trabaja con punteros y referencias para modificar el valor de una variable encapsulada dentro de una clase.
 
 El programa permite:
 
@@ -121,7 +121,7 @@ Esto permite analizar cómo las referencias funcionan como alias de una variable
 
 ## Actividad No. 3 — Arrays y Direccionamiento
 
-En este punto se implementa un arreglo dinámico de enteros utilizando memoria reservada manualmente.
+Se implementa un arreglo dinámico de enteros utilizando memoria reservada manualmente.
 
 El programa permite:
 
@@ -137,7 +137,7 @@ Cada elemento del arreglo puede ser accedido utilizando punteros y desplazamient
 
 ## Actividad No. 4 — Memoria Dinámica
 
-En este punto se implementa una matriz dinámica bidimensional utilizando memoria reservada en el heap mediante `new`.
+Se implementa una matriz dinámica bidimensional utilizando memoria reservada en el heap mediante `new`.
 
 El programa permite:
 
@@ -277,15 +277,44 @@ La actividad cumple con los siguientes requerimientos:
 
 # 3. Compilación de la Actividad en Docker
 
-> Espacio reservado para documentación del Dockerfile y compilación en Docker.
+La actividad fue preparada para compilarse y ejecutarse dentro de un contenedor Docker, permitiendo ejecutar el programa en un entorno controlado y con todas las dependencias necesarias.
+
+Para construir la imagen Docker deben ejecutarse los siguientes comandos:
+
+## Clonar el repositorio
+
+```bash
+git clone https://github.com/julianagonz/Assignment_3_SISOP.git
+```
+
+## Entrar a la carpeta del proyecto
+
+```bash
+cd Assignment_3_SISOP
+```
+
+## Construir la imagen Docker
+
+```bash
+docker build -t program .
+```
+
+Durante este proceso Docker compilará todos los archivos fuente de la actividad y generará una imagen lista para ejecutar el programa.
 
 ---
 
 # 3.1 Ejecución en Docker
 
-> Espacio reservado para comandos de ejecución en Docker.
+Una vez construida la imagen, el contenedor puede ejecutarse utilizando el siguiente comando:
+
+```bash
+docker run -it program
+```
+
+Al ejecutar el contenedor se iniciará el programa principal de la actividad, permitiendo interactuar con todas las demostraciones implementadas relacionadas con stack, heap, punteros, referencias y memoria dinámica.
 
 ---
+
 
 # 3.2 Ejecución fuera de Docker
 
