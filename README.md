@@ -141,11 +141,11 @@ En este punto se implementa una matriz dinámica bidimensional utilizando memori
 
 El programa permite:
 
-* Reserva dinámica de memoria
-* Ingreso de datos por consola
-* Visualización de valores almacenados
-* Visualización de direcciones de memoria
-* Liberación manual de memoria con `delete`
+* Reservar memoria dinámica.
+* Ingresar valores por consola
+* Mostrar los valores almacenados en la matriz
+* Visualizar las direcciones de memoria de cada posición
+* Liberar manualmente la memoria utilizando `delete`
 
 La matriz se construye utilizando punteros dobles (`int**`) y memoria dinámica para filas y columnas.
 
@@ -155,14 +155,14 @@ La matriz se construye utilizando punteros dobles (`int**`) y memoria dinámica 
 
 La demostración del stack utiliza variables locales y llamadas recursivas para visualizar cómo se comporta la memoria automática durante la ejecución del programa.
 
-En cada llamada recursiva se imprime:
+El programa muestra:
 
-* Nivel de llamada
-* Valor de la variable local
-* Dirección de memoria correspondiente
+* Valor de variables locales
+* Dirección de memoria de variables almacenadas en stack
+* Niveles de llamadas recursivas
+* Crecimiento del stack durante la recursión
 
-Esto permite observar cómo el stack crece a medida que se realizan nuevas llamadas a funciones.
-
+Además, cada llamada recursiva crea un nuevo stack frame con una dirección de memoria diferente, permitiendo observar cómo se organiza la memoria automática.
 
 ---
 
@@ -172,11 +172,27 @@ La demostración del heap utiliza memoria dinámica creada mediante `new`.
 
 El programa muestra:
 
-* Dirección del puntero
-* Dirección reservada en heap
-* Liberación manual de memoria
+* Dirección del puntero almacenado en stack
+* Dirección de memoria reservada en heap
+* Valores almacenados dinámicamente
+* Liberación manual de memoria utilizando `delete` y `delete[]`
 
-Además, se implementa un arreglo dinámico para observar cómo se almacenan estructuras reservadas dinámicamente.
+Además, se implementa un arreglo dinámico para observar cómo se almacenan estructuras reservadas dinámicamente dentro del heap.
+
+---
+
+## Demostración del CODE
+
+La demostración del CODE permite observar la región de memoria donde se almacenan las funciones e instrucciones compiladas del programa.
+
+El programa muestra:
+
+* Ejecución de funciones almacenadas en el CODE
+* Dirección de memoria de diferentes funciones
+* Uso de punteros a función
+
+Además, se utilizan `reinterpret_cast` y punteros a función para visualizar las direcciones correspondientes a las funciones del programa.
+
 
 ---
 
