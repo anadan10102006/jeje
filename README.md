@@ -36,9 +36,10 @@ La implementación incluye:
 
 * Clases para encapsular variables y operaciones sobre memoria
 * Uso de punteros para acceder y modificar valores
+* Uso de referencias como alias de memoria
 * Ejemplos de memoria automática (stack)
 * Ejemplos de memoria dinámica (heap)
-* Construcción dinámica de matrices utilizando `new`
+* Construcción dinámica de arreglos y matrices utilizando `new`
 * Liberación manual de memoria utilizando `delete`
 
 Además, se incluyen demostraciones adicionales para visualizar direcciones de memoria y observar diferencias entre stack y heap.
@@ -57,72 +58,88 @@ Archivo principal encargado de ejecutar todas las actividades y demostraciones.
 `VariableEntera.cpp / VariableEntera.h`
 Implementación de la actividad relacionada con variables enteras y punteros.
 
+`PunteroVariable.cpp / PunteroVariable.h`
+Implementación de la actividad relacionada con punteros y referencias.
+
+`ArregloEnteros.cpp / ArregloEnteros.h`
+Implementación de la actividad relacionada con arreglos y direccionamiento mediante punteros.
+
+`MatrizDinamica.cpp / MatrizDinamica.h`
+Implementación de matrices dinámicas utilizando memoria reservada manualmente.
+
 `StackDemo.cpp / StackDemo.h`
 Demostración del funcionamiento del stack mediante variables locales y llamadas recursivas.
 
 `HeapDemo.cpp / HeapDemo.h`
 Demostración del funcionamiento del heap utilizando memoria dinámica.
 
-`MatrizDinamica.cpp / MatrizDinamica.h`
-Implementación de matrices dinámicas utilizando memoria reservada manualmente.
+`CodeDemo.cpp / CodeDemo.h`
+Archivo utilizado para demostraciones adicionales y pruebas de ejecución relacionadas con memoria y direccionamiento.
 
 `README.md`
 Archivo de documentación de la actividad.
 
 ---
 
-# 1.4 Actividades Implementadas
+# 1.4 Programas Implementados
 
 ## Actividad No. 1 — Variables y Punteros
 
-En esta actividad se crea una variable entera y se realizan operaciones relacionadas con direccionamiento de memoria.
+En este punto se crea una variable entera y se realizan operaciones relacionadas con direccionamiento de memoria utilizando punteros.
 
-La actividad permite:
+El programa permite:
 
 * Mostrar el valor de una variable
 * Mostrar su dirección de memoria
 * Modificar el valor utilizando punteros
+* Observar cómo un puntero almacena la dirección de una variable
 
-### Conceptos trabajados
-
-* Variables
-* Punteros
-* Direcciones de memoria
-* Operadores `&` y `*`
+Durante la ejecución se utilizan los operadores `&` y `*` para acceder y modificar el contenido almacenado en memoria.
 
 ---
 
 ## Actividad No. 2 — Punteros y Referencias
 
-> Espacio reservado para documentación de la Actividad No. 2.
+En este punto se trabaja con punteros y referencias para modificar el valor de una variable encapsulada dentro de una clase.
 
-### Conceptos trabajados
+El programa permite:
 
-* Referencias
-* Punteros
-* Modificación indirecta de variables
-* Alias de memoria
+* Modificar variables utilizando punteros
+* Modificar variables utilizando referencias
+* Comparar direcciones de memoria
+* Observar cómo referencias y punteros acceden al mismo espacio de memoria
+
+También se muestran las direcciones correspondientes a:
+
+* La variable original
+* El puntero
+* La referencia
+
+Esto permite analizar cómo las referencias funcionan como alias de una variable existente.
 
 ---
 
 ## Actividad No. 3 — Arrays y Direccionamiento
 
-> Espacio reservado para documentación de la Actividad No. 3.
+En este punto se implementa un arreglo dinámico de enteros utilizando memoria reservada manualmente.
 
-### Conceptos trabajados
+El programa permite:
 
-* Arrays
-* Aritmética de punteros
-* Direccionamiento de memoria en arreglos
-* Acceso mediante índices y punteros
+* Reservar memoria dinámica para arreglos
+* Llenar el arreglo por consola
+* Modificar posiciones mediante aritmética de punteros
+* Mostrar direcciones de memoria de cada elemento
+* Liberar memoria utilizando `delete[]`
+
+Cada elemento del arreglo puede ser accedido utilizando punteros y desplazamientos de memoria, permitiendo observar cómo se almacenan los elementos de forma contigua.
 
 ---
 
 ## Actividad No. 4 — Memoria Dinámica
 
-En esta actividad se implementa una matriz dinámica bidimensional utilizando memoria reservada en el heap mediante `new`.
+En este punto se implementa una matriz dinámica bidimensional utilizando memoria reservada en el heap mediante `new`.
 
-La actividad incluye:
+El programa incluye:
 
 * Reserva dinámica de memoria
 * Ingreso de datos por consola
@@ -130,113 +147,40 @@ La actividad incluye:
 * Visualización de direcciones de memoria
 * Liberación manual de memoria con `delete`
 
-### Conceptos trabajados
-
-* Heap
-* `new`
-* `delete`
-* Matrices dinámicas
-* Gestión manual de memoria
+La matriz se construye utilizando punteros dobles (`int**`) y memoria dinámica para filas y columnas.
 
 ---
 
-# 2. Funcionamiento de la Actividad
+## Demostración del Stack
 
-El funcionamiento general de la actividad puede describirse en las siguientes etapas:
-
-## Creación de variables y objetos
-
-El programa solicita datos al usuario y crea las estructuras necesarias para cada actividad.
-
-## Manipulación de memoria
-
-Dependiendo de la actividad ejecutada, el programa:
-
-* Accede a variables mediante punteros
-* Modifica valores indirectamente
-* Reserva memoria dinámica
-* Libera memoria manualmente
-
-## Visualización de direcciones
-
-El programa imprime direcciones de memoria para permitir observar:
-
-* Ubicación de variables en stack
-* Ubicación de datos en heap
-* Diferencias entre memoria automática y dinámica
-
-## Demostraciones adicionales
-
-Se incluyen ejemplos recursivos y estructuras dinámicas para analizar el crecimiento del stack y el uso del heap.
-
----
-
-# 2.1 Funcionamiento de las Actividades
-
-## Variables y Punteros
-
-La variable entera es almacenada en memoria y posteriormente se utiliza un puntero para acceder a su dirección y modificar su valor.
-
-Características:
-
-* Uso básico de punteros
-* Acceso indirecto
-* Visualización de direcciones de memoria
-
----
-
-## Stack
-
-La demostración del stack utiliza variables locales y llamadas recursivas.
+La demostración del stack utiliza variables locales y llamadas recursivas para visualizar cómo se comporta la memoria automática durante la ejecución del programa.
 
 En cada llamada recursiva se imprime:
 
 * Nivel de llamada
 * Valor de la variable local
-* Dirección de memoria
+* Dirección de memoria correspondiente
 
-Esto permite observar cómo el stack crece con cada llamada.
+Esto permite observar cómo el stack crece a medida que se realizan nuevas llamadas a funciones.
 
-Características:
-
-* Memoria automática
-* Liberación automática
-* Uso de variables locales
-* Recursividad
 
 ---
 
-## Heap
+## Demostración del Heap
 
 La demostración del heap utiliza memoria dinámica creada mediante `new`.
 
-Se muestran:
+El programa muestra:
 
 * Dirección del puntero
 * Dirección reservada en heap
 * Liberación manual de memoria
 
-Características:
-
-* Memoria dinámica
-* Persistencia hasta `delete`
-* Gestión manual de memoria
+Además, se implementa un arreglo dinámico para observar cómo se almacenan estructuras reservadas dinámicamente.
 
 ---
 
-## Matriz Dinámica
-
-La matriz dinámica se construye utilizando punteros dobles (`int**`) y memoria reservada dinámicamente.
-
-Características:
-
-* Reserva dinámica por filas y columnas
-* Acceso bidimensional
-* Liberación manual de memoria
-
----
-
-# 2.2 Formato de Entrada
+# 2. Formato de Entrada
 
 El programa solicita diferentes valores por consola dependiendo de la actividad ejecutada.
 
@@ -248,13 +192,14 @@ Ingrese el nuevo valor para modificar la variable:
 Ingrese la cantidad de niveles:
 Ingrese la cantidad de filas:
 Ingrese la cantidad de columnas:
+Ingrese el tamanio del arreglo dinamico:
 ```
 
-En el caso de la matriz dinámica, el usuario también debe ingresar los valores de cada posición.
+En el caso de arreglos y matrices dinámicas, el usuario también debe ingresar los valores correspondientes a cada posición.
 
 ---
 
-# 2.3 Formato de Salida
+# 2.1 Formato de Salida
 
 La salida del programa muestra:
 
@@ -285,6 +230,34 @@ Direccion de memoria reservada en heap: 0x98ab20
 
 ---
 
+# 2.2 Cumplimiento de los Requerimientos
+
+La actividad cumple con los siguientes requerimientos:
+
+## Implementación de actividades de memoria
+
+* Variables y punteros
+* Referencias
+* Arrays y direccionamiento
+* Memoria dinámica
+
+## Uso de programación orientada a objetos
+
+* Clases
+* Encapsulamiento
+* Separación en archivos `.h` y `.cpp`
+
+## Gestión de memoria dinámica
+
+* Uso de `new`
+* Uso de `delete`
+
+## Inclusión de documentación
+
+* README con explicación de la actividad
+* Explicación de compilación y ejecución
+
+---
 
 # 3. Compilación de la Actividad en Docker
 
@@ -302,7 +275,13 @@ Direccion de memoria reservada en heap: 0x98ab20
 
 Si se desea compilar y ejecutar directamente con `g++`, pueden utilizarse los siguientes comandos.
 
-## Compilación
+## Compilación completa del programa
+
+```bash
+g++ main.cpp VariableEntera.cpp PunteroVariable.cpp ArregloEnteros.cpp StackDemo.cpp HeapDemo.cpp MatrizDinamica.cpp -o programa
+```
+
+## Compilación usando todos los archivos `.cpp`
 
 ```bash
 g++ *.cpp -o programa
@@ -318,25 +297,6 @@ programa.exe
 
 ```bash
 ./programa
-```
-
----
-
-# 4. Archivos Incluidos
-
-La entrega incluye los siguientes archivos:
-
-```txt
-main.cpp
-VariableEntera.cpp
-VariableEntera.h
-StackDemo.cpp
-StackDemo.h
-HeapDemo.cpp
-HeapDemo.h
-MatrizDinamica.cpp
-MatrizDinamica.h
-README.md
 ```
 
 ---
