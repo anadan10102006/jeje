@@ -139,7 +139,7 @@ Cada elemento del arreglo puede ser accedido utilizando punteros y desplazamient
 
 En este punto se implementa una matriz dinámica bidimensional utilizando memoria reservada en el heap mediante `new`.
 
-El programa incluye:
+El programa permite:
 
 * Reserva dinámica de memoria
 * Ingreso de datos por consola
